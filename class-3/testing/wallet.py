@@ -5,7 +5,8 @@ class Wallet:
         self.max_balance = 0
 
     def withdraw(self, amount):
-        pass
+        self.balance = self.balance - amount
+        # self.balance -= amount
 
     def add_founds(self, amount):
         if amount < 0:
@@ -14,8 +15,8 @@ class Wallet:
 
     def is_empty(self):
         if self.balance == 0:
-            return False
-        return True
+            return True
+        return False
 
     def has_debt(self):
         pass

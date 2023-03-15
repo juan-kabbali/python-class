@@ -33,3 +33,8 @@ def test_add_negative_founds(wallet, amount):
     with pytest.raises(Exception) as exception_info:
         wallet.add_founds(amount)
     assert str(exception_info.value) == "amount must be a positive number"
+
+
+def test_withdraw(wallet):
+    wallet.withdraw(5)
+    assert wallet.balance == 15
