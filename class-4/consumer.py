@@ -11,7 +11,7 @@ def process_msg(chan: BlockingChannel, method: Basic.Deliver, properties: BasicP
 
 
 # consume messages from queues
-channel.basic_consume(queue="queue-hello-world", on_message_callback=process_msg, auto_ack=True)
+channel.basic_consume(queue="hello-world", on_message_callback=process_msg, auto_ack=True)
 
 channel.basic_consume(queue="queue-a", on_message_callback=process_msg, auto_ack=True)
 channel.basic_consume(queue="queue-b", on_message_callback=process_msg, auto_ack=True)
