@@ -5,8 +5,7 @@ class Wallet:
         self.max_balance = 0
 
     def withdraw(self, amount):
-        self.balance = self.balance - amount
-        # self.balance -= amount
+        self.balance -= amount
 
     def add_founds(self, amount):
         if amount < 0:
