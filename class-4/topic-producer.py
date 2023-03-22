@@ -20,23 +20,23 @@ QUEUES = [
 EVENTS = [
     {
         "topic": "a",
-        "body": "event 1 in topic a"
+        "body": "event 1"
     },
     {
         "topic": "b",
-        "body": "event 1 in topic b"
+        "body": "event 1"
     },
     {
         "topic": "c",
-        "body": "event 3 in topic c"
+        "body": "event 1"
     },
     {
         "topic": "a",
-        "body": "event 2 in topic a"
+        "body": "event 2"
     },
     {
         "topic": "b",
-        "body": "event 2 in topic b"
+        "body": "event 2"
     }
 ]
 
