@@ -1,4 +1,5 @@
 import http
+import re
 from abc import abstractmethod
 from email.utils import parseaddr
 from log import Log
@@ -18,7 +19,10 @@ class UserTransformation(BaseTransformation):
         return log
 
     def is_email(self, user: str) -> bool:
-        pass
+        regex = re.compile(r"\S+@\S+\.\S+")
+        if re.search(regex, user):
+            return True
+        return False
 
 
 class StatusCodeTransformation(BaseTransformation):

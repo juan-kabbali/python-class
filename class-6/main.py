@@ -6,4 +6,5 @@ with open("assets/web-server-nginx.log") as file:
         log = Log()
         log.parse(line)
         log = StatusCodeTransformation().transform(log)
-        print(f"{log.status} {log.status_verbose}")
+        log = UserTransformation().transform(log)
+        print(log)

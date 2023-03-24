@@ -18,3 +18,12 @@ class Log:
         self.ip = match.group("ip")
         self.user = match.group("user")
         self.status = match.group("status")
+
+    def __str__(self):
+        return f"""
+        ip: {self.ip}
+        user: {self.user}
+        is_email: {self.is_email}
+        status: {self.status}
+        status_verbose: {self.status_verbose}
+        """
