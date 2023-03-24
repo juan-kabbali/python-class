@@ -5,7 +5,8 @@ class Log:
     def __init__(self):
         self.ip = None
         self.user = None
-        self.is_email = None
+        self.is_email = False
+        self.domain = None
         self.status = None
         self.status_verbose = None
 
@@ -24,6 +25,7 @@ class Log:
         ip: {self.ip}
         user: {self.user}
         is_email: {self.is_email}
+        domain: {self.domain}
         status: {self.status}
         status_verbose: {self.status_verbose}
         """

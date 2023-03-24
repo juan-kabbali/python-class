@@ -15,14 +15,16 @@ class BaseTransformation:
 class UserTransformation(BaseTransformation):
 
     def transform(self, log: Log) -> Log:
-        log.is_email = self.is_email(log.user)
+        if domain := self.get_domain_from_email(log.user):
+            log.is_email = True
+            log.domain = domain
         return log
 
-    def is_email(self, user: str) -> bool:
-        regex = re.compile(r"\S+@\S+\.\S+")
-        if re.search(regex, user):
-            return True
-        return False
+    def get_domain_from_email(self, user: str) -> str | None:
+        regex = re.compile(r"\S+@(?P<domain>\S+\.\S+)")
+        if match := re.search(regex, user):
+            return match.group("domain")
+        return None
 
 
 class StatusCodeTransformation(BaseTransformation):
