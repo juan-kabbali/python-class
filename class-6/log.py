@@ -7,6 +7,7 @@ class Log:
         self.user = None
         self.is_email = False
         self.domain = None
+        self.timestamp = None
         self.status = None
         self.status_verbose = None
 

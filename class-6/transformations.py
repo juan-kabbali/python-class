@@ -33,3 +33,8 @@ class StatusCodeTransformation(BaseTransformation):
         log.status_verbose = http.HTTPStatus(int(log.status)).phrase
         return log
 
+
+class DateTransformation(BaseTransformation):
+
+    def transform(self, log: Log) -> Log:
+        return log
